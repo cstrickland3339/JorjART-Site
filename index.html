@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jorjART | South River Hat Co. & Bespoke Leather</title>
+  <meta name="description" content="Handcrafted, Handstitched leather hats, custom leathercraft, and wearable art by jorjART and South River Hat Co.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #111112;
+      --bg-surface: #18181b;
+      --bg-card: #202024;
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent-brass: #d4a373;
+      --accent-oxblood: #7f1d1d;
+      --border-subtle: #2e2e33;
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: var(--accent-brass);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(17, 17, 18, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 50;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-main);
+    }
+
+    .brand-logo span {
+      color: var(--accent-brass);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    nav a:hover {
+      color: var(--accent-brass);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-brass);
+      border: 1px solid var(--accent-brass);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-brass);
+      color: #111;
+      padding: 0.85rem 1.8rem;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #e2b486;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Card & Gallery Grids */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img-placeholder {
+      width: 100%;
+      height: 240px;
+      background-color: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--border-subtle);
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border-subtle);
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-brass);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Studio & Bio Section */
+    .bio-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .bio-box {
+        grid-template-columns: 1.5fr 1fr;
+      }
+    }
+
+    .bio-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .bio-box p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .specs-list {
+      list-style: none;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem;
+    }
+
+    .specs-list li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .specs-list strong {
+      color: var(--text-main);
+    }
+
+    /* Contact / Commission Form */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 2.5rem;
+      border-radius: 6px;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-brass);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Minimal Nav -->
+  <header>
+    <div class="brand-logo">jorj<span>ART</span></div>
+    <nav>
+      <a href="#hats">Hats</a>
+      <a href="#leather">Leather</a>
+      <a href="#studio">Studio</a>
+      <a href="#commissions">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Hand-Formed &amp; Built on the Road</div>
+      <h1>Bespoke Leather &amp; Headwear</h1>
+      <p>Original handstiched leather hats, carved leather goods, and wearable mixed-media artifacts handcrafted under the jorjART umbrella.</p>
+      <a href="#commissions" class="btn">Inquire for Custom Work</a>
+    </div>
+  </section>
+
+  <!-- Hats Section (#hats anchor for southriverhatco.com redirect) -->
+  <section id="hats">
+    <div class="container">
+      <div class="section-header">
+        <h2>The South River Hat Co.</h2>
+        <p>Handstiched, heirloom-grade veg-tan millinery built for a lifetime of wear.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <!-- Replace placeholder with: <img src="images/the-rook.jpg" class="card-img-placeholder" alt="The South River Rook"> -->
+          <div class="card-img-placeholder">[ Photo: Custom Top Hat ]</div>
+          <div class="card-body">
+            <span class="card-tag">Signature Series</span>
+            <h3 class="card-title">The South River Rook</h3>
+            <p class="card-text">Heavy veg-tan top hat wet-molded to shape, finished with slate grey and oxblood accents and hand-set brass hardware.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-placeholder">[ Photo: Bespoke Hatband ]</div>
+          <div class="card-body">
+            <span class="card-tag">Millinery Detail</span>
+            <h3 class="card-title">Sculpted Hatbands</h3>
+            <p class="card-text">Interchangeable carved leather bands featuring hand-tooled filigree, antique patinas, and tailored feather mounts.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-placeholder">[ Photo: Bespoke Commission ]</div>
+          <div class="card-body">
+            <span class="card-tag">Custom Build</span>
+            <h3 class="card-title">The High Crown Custom</h3>
+            <p class="card-text">Built to your exact head circumference. Hand-dyed, weather-sealed, and stamped with our archival brass maker's mark.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leather Section (#leather anchor for southriverleather.com redirect) -->
+  <section id="leather" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <h2>The South River Leather Co.</h2>
+        <p>Durable everyday carry, carved art, and specialized wearable gear.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="background: var(--bg-dark);">
+          <div class="card-img-placeholder">[ Photo: Carved Leather Goods ]</div>
+          <div class="card-body">
+            <span class="card-tag">Tooling &amp; Carving</span>
+            <h3 class="card-title">Carved Leather Panels</h3>
+            <p class="card-text">Hand-cut, beveled, and antiqued relief work on heavy vegetable-tanned hides for custom portfolios and wall hangings.</p>
+          </div>
+        </div>
+
+        <div class="card" style="background: var(--bg-dark);">
+          <div class="card-img-placeholder">[ Photo: Wearable Accessories ]</div>
+          <div class="card-body">
+            <span class="card-tag">Everyday Carry</span>
+            <h3 class="card-title">Heavy Utility Belts &amp; Cases</h3>
+            <p class="card-text">Saddle-stitched construction using thick harness leather, solid brass buckles, and burnished beeswax edges.</p>
+          </div>
+        </div>
+
+        <div class="card" style="background: var(--bg-dark);">
+          <div class="card-img-placeholder">[ Photo: Mixed-Media Oddities ]</div>
+          <div class="card-body">
+            <span class="card-tag">Experimental Studio</span>
+            <h3 class="card-title">Sculpted Artifacts &amp; Props</h3>
+            <p class="card-text">One-off mixed-media pieces integrating articulated mechanics, bone accents, and embedded electronic illumination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Studio / Nomad Info -->
+  <section id="studio">
+    <div class="container">
+      <div class="bio-box">
+        <div>
+          <h3>About the Workshop</h3>
+          <p>Every piece under <strong>jorjART</strong> and <strong>The South River Hat Co.</strong> is designed, hand-cut, wet-formed, and finished by a single pair of hands inside a mobile workshop.</p>
+          <p>No assembly lines and no mass production. When you see a hat in person or order a custom commission, you are getting an unrepeatable piece crafted with traditional hand tools, premium vegetable-tanned hides, and time.</p>
+        </div>
+        <div>
+          <ul class="specs-list">
+            <li><strong>Studio:</strong> Mobile Workshop / Nomadic Lab</li>
+            <li><strong>Primary Focus:</strong> Wet-Formed Headwear &amp; Custom Leather</li>
+            <li><strong>Lead Time:</strong> 4–6 Weeks on Custom Builds</li>
+            <li><strong>Umbrella:</strong> jorjART Studio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commission / Contact Form -->
+  <section id="commissions" style="border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Custom Commissions &amp; Inquiries</h2>
+        <p>Saw a hat out in the wild or have a bespoke project in mind? Reach out below.</p>
+      </div>
+
+      <!-- Replace the action URL with your Formspree endpoint (e.g., https://formspree.io/f/YOUR_FORM_ID) -->
+      <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="email@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="project-type">Project of Interest</label>
+          <select id="project-type" name="project_type">
+            <option value="hat">Custom Top Hat / Millinery</option>
+            <option value="leather">Leather Accessory / Belt / Journal</option>
+            <option value="props">Mixed-Media Art / Animatronic Prop</option>
+            <option value="in_person">"Saw your hat in person!"</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Details / Dimensions</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell me what you have in mind, head measurement (if applicable), or where we crossed paths..."></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 jorjART. All rights reserved.</p>
+      <p style="color: var(--border-subtle);">South River Hat Co. &bull; South River Leather Co.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
