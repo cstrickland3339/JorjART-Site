@@ -27,15 +27,67 @@
     a { color: var(--accent-brass); text-decoration: none; transition: color 0.2s ease; }
     a:hover { color: #fff; }
 
+   /* Responsive Header & Navigation */
     header {
-      position: sticky; top: 0; background: rgba(16, 16, 18, 0.94);
-      backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-subtle);
-      z-index: 50; padding: 1.1rem 1.75rem; display: flex; justify-content: space-between; align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(16, 16, 18, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 50;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .brand-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; }
+
+    .brand-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
     .brand-logo span { color: var(--accent-brass); }
-    nav a { margin-left: 1.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    nav a {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
     nav a:hover { color: var(--accent-brass); }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        gap: 0.6rem;
+        padding: 0.75rem 1rem;
+        text-align: center;
+      }
+
+      nav {
+        gap: 0.75rem;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.4rem;
+      }
+
+      .nav-long-text {
+        display: none;
+      }
+    }
 
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
@@ -91,12 +143,12 @@
 </head>
 <body>
 
-  <header>
+ <header>
     <div class="brand-logo">SOUTH RIVER <span>HAT CO.</span></div>
     <nav>
-      <a href="index.html">jorjART Studio</a>
-      <a href="#gallery">Hat Silhouettes</a>
-      <a href="#commission">Build Inquiries</a>
+      <a href="index.html">jorj<span>ART</span></a>
+      <a href="#gallery"><span class="nav-long-text">Hat </span>Silhouettes</a>
+      <a href="#commission"><span class="nav-long-text">Build </span>Inquiries</a>
     </nav>
   </header>
 
