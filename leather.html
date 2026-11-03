@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The South River Leather Co. | Durable Goods & Leather Restoration</title>
+  <meta name="description" content="Hand crafted, hand stitched everyday leather goods. Custom wallets, knife sheaths, field holsters, heavy-duty belts, bags, bracelets, and heirloom leather repair.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #101012;
+      --bg-surface: #18181b;
+      --bg-card: #222226;
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent-brass: #d4a373;
+      --border-subtle: #2d2d32;
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-sans); line-height: 1.6; }
+    a { color: var(--accent-brass); text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: #fff; }
+
+    header {
+      position: sticky; top: 0; background: rgba(16, 16, 18, 0.94);
+      backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-subtle);
+      z-index: 50; padding: 1.1rem 1.75rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; }
+    .brand-logo span { color: var(--accent-brass); }
+    nav a { margin-left: 1.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+    nav a:hover { color: var(--accent-brass); }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .hero { padding: 5rem 0 3.5rem; text-align: center; border-bottom: 1px solid var(--border-subtle); }
+    .hero-badge {
+      display: inline-block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent-brass); border: 1px solid var(--accent-brass); padding: 0.35rem 1.1rem; border-radius: 9999px; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.25rem; }
+    .hero p { max-width: 700px; margin: 0 auto 2rem; font-size: 1.15rem; color: var(--text-muted); font-weight: 300; }
+
+    section { padding: 4.5rem 0; }
+    .section-header { margin-bottom: 2.75rem; text-align: center; }
+    .section-header h2 { font-family: var(--font-display); font-size: 2.2rem; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
+    .section-header p { color: var(--text-muted); font-size: 1rem; max-width: 680px; margin: 0 auto; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
+    .gear-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; }
+    .gear-card img, .card-placeholder { width: 100%; height: 260px; object-fit: cover; display: block; background: #151518; border-bottom: 1px solid var(--border-subtle); }
+    .gear-body { padding: 1.5rem; }
+    .gear-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-brass); display: block; margin-bottom: 0.4rem; }
+    .gear-title { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .gear-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
+
+    .repair-banner {
+      background: var(--bg-surface); border-left: 3px solid var(--accent-brass); border-radius: 0 6px 6px 0;
+      padding: 2.25rem; margin-top: 3rem;
+    }
+    .repair-banner h3 { font-family: var(--font-display); font-size: 1.45rem; margin-bottom: 0.75rem; }
+    .repair-banner p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; }
+
+    .contact-form {
+      max-width: 640px; margin: 2rem auto 0; background: var(--bg-surface);
+      border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: 6px;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; color: var(--text-muted); }
+    input, select, textarea {
+      width: 100%; background: var(--bg-dark); border: 1px solid var(--border-subtle); color: var(--text-main);
+      padding: 0.8rem; border-radius: 4px; font-family: inherit; font-size: 0.95rem;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent-brass); }
+
+    .btn {
+      display: inline-block; background-color: var(--accent-brass); color: #111; padding: 0.85rem 1.8rem;
+      border-radius: 4px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.85rem; border: none; cursor: pointer;
+    }
+    .btn:hover { background-color: #e2b486; color: #000; }
+
+    footer { border-top: 1px solid var(--border-subtle); padding: 3.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-logo">SOUTH RIVER <span>LEATHER CO.</span></div>
+    <nav>
+      <a href="index.html">jorjART Studio</a>
+      <a href="#gear">Everyday Gear</a>
+      <a href="#repair">Repairs</a>
+      <a href="#contact">Inquiries</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Hand Crafted &bull; Hand Stitched &bull; Built for Hard Use</div>
+      <h1>Durable Leather Trade Goods</h1>
+      <p>Wallets, knife sheaths, field holsters, heavy belts, and bracelets. Stout gear stitched by hand to withstand daily life on the road, alongside heirloom restoration and repairs.</p>
+      <a href="#contact" class="btn">Order Goods or Request Repair</a>
+    </div>
+  </section>
+
+  <section id="gear">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everyday Carry &amp; Field Goods</h2>
+        <p>Built from premium harness and vegetable-tanned hides. Each hole punched and stitched with care.</p>
+      </div>
+
+      <div class="grid">
+        <div class="gear-card">
+          <div class="card-placeholder" style="display:flex; align-items:center; justify-content:center; color:#555;">[ Photo: Handcrafted Wallets &amp; Cases ]</div>
+          <div class="gear-body">
+            <span class="gear-tag">Everyday Carry</span>
+            <h3 class="gear-title">Wallets &amp; Pocket Goods</h3>
+            <p class="gear-desc">Minimalist cardholders, bifold field wallets, and passport cases. Hand-burnished beeswax edges and stout bonded thread.</p>
+          </div>
+        </div>
+
+        <div class="gear-card">
+          <div class="card-placeholder" style="display:flex; align-items:center; justify-content:center; color:#555;">[ Photo: Custom Sheaths &amp; Holsters ]</div>
+          <div class="gear-body">
+            <span class="gear-tag">Field &amp; Camp</span>
+            <h3 class="gear-title">Knife Sheaths &amp; Holsters</h3>
+            <p class="gear-desc">Pancake and fold-over custom sheaths molded securely to your blade or tool. Hand-carved accents, welted seams, and heavy belt loops.</p>
+          </div>
+        </div>
+
+        <div class="gear-card">
+          <div class="card-placeholder" style="display:flex; align-items:center; justify-content:center; color:#555;">[ Photo: Belts, Bags &amp; Cuffs ]</div>
+          <div class="gear-body">
+            <span class="gear-tag">Utility &amp; Wear</span>
+            <h3 class="gear-title">Heavy Belts &amp; Bracelets</h3>
+            <p class="gear-desc">Full-grain work belts cut from 9–10 oz leather with solid brass hardware, along with hand-carved cuffs and rugged utility bags.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="repair" class="repair-banner">
+        <h3>Leather Repair &amp; Restoration</h3>
+        <p>A good piece of leather should outlive its owner. We restore worn heirloom bags, rebuild blown stitching, replace aged hardware, and condition cracked saddles, motorcycle tack, and field gear to put them back into faithful service.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-top: 1px solid var(--border-subtle); background: var(--bg-surface);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact South River Leather Co.</h2>
+        <p>Request custom field gear, ask about standard pieces, or send details regarding an item in need of repair.</p>
+      </div>
+
+      <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="email@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="inquiry_type">Inquiry Type</label>
+          <select id="inquiry_type" name="inquiry_type">
+            <option value="wallet_or_belt">Wallet, Belt, or Bracelet</option>
+            <option value="sheath_or_holster">Custom Knife Sheath or Holster</option>
+            <option value="leather_repair">Leather Restoration / Stitch Repair</option>
+            <option value="bag_or_gear">Field Bag or Custom Tool Rig</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="details">Project or Repair Details</label>
+          <textarea id="details" name="details" rows="4" placeholder="Describe the item you need built, knife dimensions (if sheath), or photos/description of the repair..."></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;">Submit Leather Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 The South River Leather Co. &bull; A <a href="index.html">jorjART</a> Brand</p>
+    </div>
+  </footer>
+
+</body>
+</html>
