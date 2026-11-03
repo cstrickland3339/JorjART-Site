@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The South River Hat Co. | Hand Crafted Leather Headwear</title>
+  <meta name="description" content="Hand crafted, hand carved, hand stitched leather hats. Top hats, fedoras, pork pies, flat caps, and newsboys. Every build includes a complete photo journal from raw hide to finished piece.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #101012;
+      --bg-surface: #18181b;
+      --bg-card: #222226;
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent-brass: #d4a373;
+      --border-subtle: #2d2d32;
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-sans); line-height: 1.6; }
+    a { color: var(--accent-brass); text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: #fff; }
+
+    header {
+      position: sticky; top: 0; background: rgba(16, 16, 18, 0.94);
+      backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-subtle);
+      z-index: 50; padding: 1.1rem 1.75rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; }
+    .brand-logo span { color: var(--accent-brass); }
+    nav a { margin-left: 1.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+    nav a:hover { color: var(--accent-brass); }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .hero { padding: 5rem 0 3.5rem; text-align: center; border-bottom: 1px solid var(--border-subtle); }
+    .hero-badge {
+      display: inline-block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent-brass); border: 1px solid var(--accent-brass); padding: 0.35rem 1.1rem; border-radius: 9999px; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.25rem; }
+    .hero p { max-width: 700px; margin: 0 auto 2rem; font-size: 1.15rem; color: var(--text-muted); font-weight: 300; }
+
+    section { padding: 4.5rem 0; }
+    .section-header { margin-bottom: 2.75rem; text-align: center; }
+    .section-header h2 { font-family: var(--font-display); font-size: 2.2rem; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
+    .section-header p { color: var(--text-muted); font-size: 1rem; max-width: 680px; margin: 0 auto; }
+
+    /* Build Journal Spotlight */
+    .journal-box {
+      background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 6px;
+      padding: 2.5rem; margin-bottom: 3.5rem;
+    }
+    .journal-box h3 { font-family: var(--font-display); font-size: 1.45rem; margin-bottom: 0.75rem; color: var(--accent-brass); }
+    .journal-box p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; margin-bottom: 1rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
+    .hat-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; }
+    .hat-card img, .card-placeholder { width: 100%; height: 260px; object-fit: cover; display: block; background: #151518; border-bottom: 1px solid var(--border-subtle); }
+    .hat-body { padding: 1.5rem; }
+    .hat-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-brass); display: block; margin-bottom: 0.4rem; }
+    .hat-title { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .hat-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
+
+    .contact-form {
+      max-width: 640px; margin: 2rem auto 0; background: var(--bg-surface);
+      border: 1px solid var(--border-subtle); padding: 2.5rem; border-radius: 6px;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; color: var(--text-muted); }
+    input, select, textarea {
+      width: 100%; background: var(--bg-dark); border: 1px solid var(--border-subtle); color: var(--text-main);
+      padding: 0.8rem; border-radius: 4px; font-family: inherit; font-size: 0.95rem;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent-brass); }
+
+    .btn {
+      display: inline-block; background-color: var(--accent-brass); color: #111; padding: 0.85rem 1.8rem;
+      border-radius: 4px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.85rem; border: none; cursor: pointer;
+    }
+    .btn:hover { background-color: #e2b486; color: #000; }
+
+    footer { border-top: 1px solid var(--border-subtle); padding: 3.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-logo">SOUTH RIVER <span>HAT CO.</span></div>
+    <nav>
+      <a href="index.html">jorjART Studio</a>
+      <a href="#gallery">Hat Silhouettes</a>
+      <a href="#commission">Build Inquiries</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Hand Crafted &bull; Hand Stitched &bull; Hand Carved</div>
+      <h1>Headwear Built With Intention</h1>
+      <p>Each hole punched and stitched with care. Every custom hat includes a full photographic build journal documenting your piece from raw hide to finished crown.</p>
+      <a href="#commission" class="btn">Inquire for a Custom Build</a>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="journal-box">
+        <h3>Your Personal Build Journal</h3>
+        <p>Commissioning headwear from South River Hat Co. means owning the story of its creation. You don't just receive a hat in a box—you receive a comprehensive photo history following your project step by step: selecting and cutting the raw veg-tan hide, hand-carving custom brim and hatband details, hand-punching every stitch line, setting each seam, and edge burnishing.</p>
+        <p style="font-size: 0.88rem; color: #888;">We honor master pattern designers by adapting proven historical blueprints from respected independent artisans, pairing classic headwear geometry with our own hand-carved accents, dyed finishes, and interior leather sweatbands.</p>
+      </div>
+
+      <div class="section-header">
+        <h2>Hat Silhouettes &amp; Styles</h2>
+        <p>Built to order to your exact head circumference.</p>
+      </div>
+
+      <div class="grid">
+        <div class="hat-card">
+          <div class="card-placeholder" style="display:flex; align-items:center; justify-content:center; color:#555;">[ Photo: Handcrafted Top Hat ]</div>
+          <div class="hat-body">
+            <span class="hat-tag">Flagship Build</span>
+            <h3 class="hat-title">Top Hats &amp; High Crowns</h3>
+            <p class="hat-desc">Imposing flared brims, stout crowns, and custom hand-carved leather hatbands. Built from stout vegetable-tanned hide with every seam hand-stitched for life.</p>
+          </div>
+        </div>
+
+        <div class="hat-card">
+          <div class="card-placeholder" style="display:flex; align-items:center; justify-content:center; color:#555;">[ Photo: Fedora / Pork Pie ]</div>
+          <div class="hat-body">
+            <span class="hat-tag">Classic Profile</span>
+            <h3 class="hat-title">Fedoras &amp; Pork Pies</h3>
+            <p class="hat-desc">Telescope creases, pinch-front crowns, and bound brim edges. Cut from rich, supple hides and shaped for a timeless profile.</p>
+          </div>
+        </div>
+
+        <div class="hat-card">
+          <div class="card-placeholder" style="display:flex; align-items:center; justify-content:center; color:#555;">[ Photo: Flat Cap / Newsboy ]</div>
+          <div class="hat-body">
+            <span class="hat-tag">Everyday Wear</span>
+            <h3 class="hat-title">Flat Caps &amp; Newsboys</h3>
+            <p class="hat-desc">Traditional 8-panel newsboys and contoured driver caps. Durable, comfortable headwear tailored for daily wear on the road.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="commission" style="border-top: 1px solid var(--border-subtle); background: var(--bg-surface);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Commission a Hat</h2>
+        <p>Tell us your head measurement and preferred style to start your build journal.</p>
+      </div>
+
+      <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="email@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="style">Preferred Hat Style</label>
+          <select id="style" name="style">
+            <option value="top_hat">Top Hat / High Crown</option>
+            <option value="fedora">Fedora</option>
+            <option value="pork_pie">Pork Pie</option>
+            <option value="flat_cap">Flat Cap</option>
+            <option value="newsboy">8-Panel Newsboy</option>
+            <option value="custom_inquiry">Saw your hat in person / Custom Idea</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Head Measurement &amp; Project Details</label>
+          <textarea id="message" name="message" rows="4" placeholder="Include your head measurement (in inches or cm) and any specific tooling, color, or hatband ideas..."></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;">Submit Hat Commission Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 The South River Hat Co. &bull; A <a href="index.html">jorjART</a> Brand</p>
+    </div>
+  </footer>
+
+</body>
+</html>
